@@ -4,7 +4,7 @@ import ECELL from "../assets/logos/ECELL.png";
 import IITMANLogo from "../assets/logos/IITMandi.png";
 import CEDAU from "../assets/logos/CED.png";
 import EDIITN from "../assets/logos/EDIITN.png";
-import SIA from "../assets/logos/SIA.png";
+import SIA from "../assets/logos/impacthub.webp";
 
 function SupportedBy() {
   const logos = [
