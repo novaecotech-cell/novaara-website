@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/logo.png";
 
@@ -109,19 +109,6 @@ function Navbar() {
 
             </div>
 
-            {/* CTA */}
-
-            <div className="hidden lg:block">
-
-              <button className="bg-gradient-to-r from-green-700 to-emerald-500 text-white px-7 py-3 rounded-full flex items-center gap-2 hover:scale-105 transition duration-300 shadow-lg">
-
-                Contact Us
-
-                <ArrowUpRight size={18} />
-
-              </button>
-
-            </div>
 
             {/* Mobile */}
 

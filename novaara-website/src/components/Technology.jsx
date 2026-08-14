@@ -69,16 +69,13 @@ function Technology() {
           >
 
 
-            <p className="mt-5 text-base leading-7 text-gray-600">
-
-              Our technology recovers valuable fibres from biomass and textile 
-              waste and transforms them into high-performance,
-              wood-free paper materials.
-
-            </p>
-
+            
             <p className="mt-4 text-base leading-7 text-gray-600">
+              
+              FROM WASTE TO FIBRE TO PAPER TO PACKAGING
+              <br />
 
+              <br />
               Every stage is designed to maximize fibre recovery,
               reduce waste, and minimize energy and water consumption.
 

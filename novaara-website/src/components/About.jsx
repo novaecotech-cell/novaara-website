@@ -38,9 +38,9 @@ function About() {
               className="mt-4 text-4xl lg:text-5xl font-bold leading-tight text-gray-900"
               style={{ fontFamily: "Playfair Display" }}
             >
-              From Discarded Fibres to
+              From Waste to
               <br />
-              Packaging
+              What you Carry.
             </motion.h2>
 
             <motion.p
@@ -104,7 +104,7 @@ function About() {
               src={aboutImage}
               loading="lazy"
               decoding="async"
-              alt="Wood-free paper materials developed by Novaara"
+              alt="Wood-free eco-friendly, sustainable paper materials developed by Novaara"
               className="rounded-2xl shadow-xl object-cover w-full h-[340px]"
             />
 
@@ -136,6 +136,27 @@ function About() {
               </p>
 
             </div>
+
+            {/* Impact Metric */}
+
+<motion.div
+  initial={{ opacity: 0, y: 15 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.5, duration: 0.6 }}
+  viewport={{ once: true }}
+  className="mt-10 ml-auto w-fit text-right"
+>
+  <p
+    className="text-3xl font-bold text-green-700"
+    style={{ fontFamily: "Playfair Display" }}
+  >
+    3,000+ kg
+  </p>
+
+  <p className="mt-1 text-sm text-gray-500">
+    Textile waste recycled
+  </p>
+</motion.div>
 
           </motion.div>
 

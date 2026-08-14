@@ -38,7 +38,7 @@ function HeroContent() {
               transition={{ delay: 0.4, duration: 0.7 }}
               className="block"
             >
-              Upcycled Materials
+              Waste
             </motion.span>
           </h1>
 
@@ -59,7 +59,7 @@ function HeroContent() {
             transition={{ delay: 0.7, duration: 0.7 }}
             className="mt-6 text-gray-200 text-base sm:text-lg leading-8 max-w-md sm:max-w-lg"
           >
-            Eco-friendly, high-performance wood-free paper engineered
+            Eco-friendly, high-performance tree-free paper engineered
             from discarded textiles and fallen leaves, helping
             businesses transition to sustainable packaging.
           </motion.p>

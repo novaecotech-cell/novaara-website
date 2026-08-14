@@ -11,7 +11,7 @@ function Hero() {
       {/* Background Image */}
       <motion.img
         src={heroImage}
-        alt="Packaging materials made from wood-free paper developed by Novaara"
+        alt="Sustainable packaging materials made from wood-free paper developed by Novaara"
         loading="eager"
         fetchPriority="high"
         decoding="async"
