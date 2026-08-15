@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://novaara.in/sitemap.xml
+Sitemap: https://novaaraecotech.com/sitemap.xml

@@ -103,7 +103,7 @@ function Contact() {
               </p>
                 
               <p>
-                📍 Chennai, India
+                📍 Madurai, India
               </p>
 
             </div>
