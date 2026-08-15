@@ -18,13 +18,13 @@ function Impact() {
       icon: <Recycle size={28} />,
       title: "Circular Economy",
       description:
-        "Transforming discarded textile waste into valuable packaging materials.",
+        "Transforming waste into valuable packaging materials.",
     },
     {
       icon: <Droplets size={28} />,
       title: "Resource Efficient",
       description:
-        "Designed to minimize water, energy and raw material consumption.",
+        "Designed to minimize water and energy consumption.",
     },
     {
       icon: <BriefcaseBusiness size={28} />,
