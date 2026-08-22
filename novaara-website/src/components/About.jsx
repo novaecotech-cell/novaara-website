@@ -104,48 +104,73 @@ function About() {
               src={aboutImage}
               loading="lazy"
               decoding="async"
-              alt="Wood-free eco-friendly, sustainable paper materials developed by Novaara"
+              alt="Wood-free eco-friendly, sustainable paper materials developed from recovered fibres by Novaara"
               className="rounded-2xl shadow-xl object-cover w-full h-[340px]"
             />
 
             {/* Floating Card */}
 
-            <div
-              className="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-lg p-5 w-56"
-            >
+            {/* Floating Card */}
 
-              <p className="text-green-700 font-semibold uppercase text-[11px] tracking-[2px]">
+<div
+  className="
+    relative z-10
+    -mt-5
+    ml-0
+    bg-white
+    rounded-2xl
+    shadow-lg
+    p-5
+    w-full
+    max-w-md
 
-                Our Mission
+    lg:absolute
+    lg:-bottom-5
+    lg:-left-5
+    lg:mt-0
+    lg:w-56
+  "
+>
 
-              </p>
+  <p className="text-green-700 font-semibold uppercase text-[11px] tracking-[2px]">
+    Our Mission
+  </p>
 
-              <h3
-                className="mt-2 text-xl font-bold"
-                style={{ fontFamily: "Playfair Display" }}
-              >
-                Circular Materials
-              </h3>
+  <h3
+    className="mt-2 text-xl font-bold"
+    style={{ fontFamily: "Playfair Display" }}
+  >
+    Circular Materials
+  </h3>
 
-              <p className="mt-2 text-sm text-gray-600 leading-6">
+  <p className="mt-2 text-sm text-gray-600 leading-6">
+    Replacing virgin wood fibres with renewable
+    waste streams for the future of sustainable
+    packaging.
+  </p>
 
-                Replacing virgin wood fibres with renewable
-                waste streams for the future of sustainable
-                packaging.
+</div>
 
-              </p>
 
-            </div>
-
-            {/* Impact Metric */}
+{/* Impact Metric */}
 
 <motion.div
   initial={{ opacity: 0, y: 15 }}
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.5, duration: 0.6 }}
   viewport={{ once: true }}
-  className="mt-10 ml-auto w-fit text-right"
+  className="
+    mt-8
+    w-full
+    text-center
+
+    lg:mt-10
+    lg:ml-auto
+    lg:w-fit
+    lg:text-right
+  "
 >
+
   <p
     className="text-3xl font-bold text-green-700"
     style={{ fontFamily: "Playfair Display" }}
@@ -156,6 +181,7 @@ function About() {
   <p className="mt-1 text-sm text-gray-500">
     Textile waste recycled
   </p>
+
 </motion.div>
 
           </motion.div>

@@ -11,36 +11,36 @@ function HeroContent() {
           {/* Heading */}
 
           <h1
-            className="text-white font-bold leading-[1.02] text-4xl sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl"
-            style={{ fontFamily: "Playfair Display" }}
-          >
-            <motion.span
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="block"
-            >
-              Packaging
-            </motion.span>
+  className="text-white font-bold leading-[1.02] text-4xl sm:text-5xl md:text-6xl lg:text-7xl max-w-3xl"
+  style={{ fontFamily: "Playfair Display" }}
+>
+  <motion.span
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7 }}
+    className="block"
+  >
+    Sustainable
+  </motion.span>
 
-            <motion.span
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.7 }}
-              className="block"
-            >
-              Made from
-            </motion.span>
+  <motion.span
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.2, duration: 0.7 }}
+    className="block"
+  >
+    Paper Packaging
+  </motion.span>
 
-            <motion.span
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.7 }}
-              className="block"
-            >
-              Waste
-            </motion.span>
-          </h1>
+  <motion.span
+    initial={{ opacity: 0, y: 40 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.4, duration: 0.7 }}
+    className="block"
+  >
+    From Waste
+  </motion.span>
+</h1>
 
           {/* Green Line */}
 
@@ -59,9 +59,9 @@ function HeroContent() {
             transition={{ delay: 0.7, duration: 0.7 }}
             className="mt-6 text-gray-200 text-base sm:text-lg leading-8 max-w-md sm:max-w-lg"
           >
-            Eco-friendly, high-performance tree-free paper engineered
-            from discarded textiles and fallen leaves, helping
-            businesses transition to sustainable packaging.
+            We develop wood-free sustainable paper packaging solutions
+            from recovered textile fibres and renewable waste streams,
+            helping businesses transition to circular packaging.
           </motion.p>
 
           {/* Buttons */}

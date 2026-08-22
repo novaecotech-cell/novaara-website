@@ -26,13 +26,13 @@ function Products() {
       title: "Square Bottom Bags — Twisted Handle",
       image: twistedbagImage,
       description:
-        "Tree-free paper bags made using recovered textile fibres with a premium twisted-handle finish.",
+        "Tree-free paper bags made using recovered textile fibres with twisted-handle finish.",
     },
     {
       title: "V-Bottom Bags",
       image: vbottombagImage,
       description:
-        "Lightweight tree-free paper bags designed for bakeries, food businesses and everyday retail applications.",
+        "Lightweight sustainable paper bags designed for bakeries, food businesses and everyday retail packaging.",
     },
   ];
 
@@ -126,7 +126,7 @@ function Products() {
                   src={product.image}
                   loading="lazy"
                   decoding="async"
-                  alt={product.title}
+                  alt={`${product.title} made from recovered textile fibres`}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
 
@@ -209,7 +209,7 @@ function Products() {
                 src={leafImage}
                 loading="lazy"
                 decoding="async"
-                alt="Packaging developed from fallen leaves"
+                alt="Wood-free paper packaging developed from fallen leaves"
                 className="absolute inset-0 w-full h-full object-cover blur-[2px] brightness-90"
               />
 

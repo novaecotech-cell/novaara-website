@@ -1,3 +1,12 @@
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+
+import { useEffect } from "react";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -8,7 +17,37 @@ import Impact from "./components/Impact";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-function App() {
+import PaperBags from "./pages/PaperBags";
+import TechnologyPage from "./pages/TechnologyPage";
+
+function ScrollHandler() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const scrollTarget = new URLSearchParams(
+      location.search
+    ).get("scrollTo");
+
+    if (!scrollTarget) return;
+
+    const timer = setTimeout(() => {
+      const element = document.getElementById(scrollTarget);
+
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, [location]);
+
+  return null;
+}
+
+function Home() {
   return (
     <>
       <Navbar />
@@ -21,6 +60,41 @@ function App() {
       <Contact />
       <Footer />
     </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <ScrollHandler />
+      <Routes>
+
+        <Route path="/" element={<Home />} />
+
+        <Route
+          path="/paper-bags"
+          element={
+            <>
+              <Navbar />
+              <PaperBags />
+              <Footer />
+            </>
+          }
+        />
+
+        <Route
+          path="/technology"
+          element={
+            <>
+              <Navbar />
+              <TechnologyPage />
+              <Footer />
+            </>
+          }
+        />
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 

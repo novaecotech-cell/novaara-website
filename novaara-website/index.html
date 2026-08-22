@@ -10,20 +10,35 @@
     content="width=device-width, initial-scale=1.0"
   />
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Novaara Ecotechnologies Pvt. Ltd.",
-    "url": "https://novaaraecotech.com",
-    "logo": "https://novaaraecotech.com/logo.png",
-    "description": "Novaara develops sustainable wood-free paper materials engineered from recovered textile waste and renewable fibres for circular packaging.",
-    "email": "mailto:novaecotech@gmail.com",
-    "sameAs": [
-      "https://www.linkedin.com/company/novaara-ecotechnologies/"
-    ]
-  }
-  </script>
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://novaaraecotech.com/#organization",
+      "name": "Novaara Ecotechnologies Pvt. Ltd.",
+      "url": "https://novaaraecotech.com/",
+      "logo": "https://novaaraecotech.com/logo.png",
+      "description": "Novaara Ecotechnologies develops sustainable wood-free paper materials from recovered textile waste and renewable fibres for circular packaging.",
+      "email": "mailto:novaecotech@gmail.com",
+      "sameAs": [
+        "https://www.linkedin.com/company/novaara-ecotechnologies/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://novaaraecotech.com/#website",
+      "url": "https://novaaraecotech.com/",
+      "name": "Novaara Ecotechnologies",
+      "publisher": {
+        "@id": "https://novaaraecotech.com/#organization"
+      },
+      "inLanguage": "en-IN"
+    }
+  ]
+}
+</script>
 
   <meta charset="UTF-8" />
 

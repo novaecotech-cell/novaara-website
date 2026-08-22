@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/logo.png";
@@ -7,6 +8,9 @@ import logo from "../assets/logo.png";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,12 +23,33 @@ function Navbar() {
   }, []);
 
   const navItems = [
-    "About",
-    "Technology",
-    "Products",
-    "Impact",
-    "Contact",
+    { label: "Home", type: "home" },
+    { label: "About", type: "scroll", target: "about" },
+    { label: "Impact", type: "scroll", target: "impact" },
+    { label: "Contact", type: "scroll", target: "contact" },
+    { label: "Technology", type: "page", target: "/technology" },
+    { label: "Products", type: "page", target: "/paper-bags" },
   ];
+
+  const handleScrollNavigation = (target) => {
+    setMenuOpen(false);
+
+    if (location.pathname === "/") {
+      document.getElementById(target)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    } else {
+      navigate(`/#${target}`);
+
+      setTimeout(() => {
+        document.getElementById(target)?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 100);
+    }
+  };
 
   return (
     <>
@@ -44,22 +69,20 @@ function Navbar() {
             }`}
           >
 
-            {/* Logo */}
+            {/* LOGO */}
 
-            <Link
-              to="home"
-              smooth={true}
-              duration={700}
+            <RouterLink
+              to="/"
               className="cursor-pointer flex items-center gap-4"
+              onClick={() => setMenuOpen(false)}
             >
               <img
                 src={logo}
-                alt="Novaara"
+                alt="Novaara Ecotechnologies"
                 className="w-14 h-14 object-contain"
               />
 
               <div>
-
                 <h1
                   className={`text-3xl font-bold tracking-wide transition ${
                     scrolled ? "text-green-900" : "text-white"
@@ -76,41 +99,61 @@ function Navbar() {
                 >
                   Ecotechnologies
                 </p>
-
               </div>
+            </RouterLink>
 
-            </Link>
 
-            {/* Desktop Navigation */}
+            {/* DESKTOP NAVIGATION */}
 
-            <div className="hidden lg:flex items-center gap-12">
+            <div className="hidden lg:flex items-center gap-10">
 
-              {navItems.map((item) => (
-                <Link
-                  key={item}
-                  to={item.toLowerCase()}
-                  smooth={true}
-                  duration={700}
-                  offset={-80}
-                  spy={true}
-                  activeClass="text-green-700"
-                  className={`cursor-pointer relative text-lg font-medium transition group ${
-                    scrolled
-                      ? "text-gray-800"
-                      : "text-white"
-                  }`}
-                >
-                  {item}
+              {navItems.map((item) => {
 
-                  <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
+                if (item.type === "home") {
+                  return (
+                    <RouterLink
+                      key={item.label}
+                      to="/"
+                      className={`cursor-pointer text-lg font-medium transition ${
+                        scrolled ? "text-gray-800" : "text-white"
+                      }`}
+                    >
+                      {item.label}
+                    </RouterLink>
+                  );
+                }
 
-                </Link>
-              ))}
+                if (item.type === "page") {
+                  return (
+                    <RouterLink
+                      key={item.label}
+                      to={item.target}
+                      className={`cursor-pointer text-lg font-medium transition ${
+                        scrolled ? "text-gray-800" : "text-white"
+                      }`}
+                    >
+                      {item.label}
+                    </RouterLink>
+                  );
+                }
+
+                return (
+                  <button
+                    key={item.label}
+                    onClick={() => handleScrollNavigation(item.target)}
+                    className={`cursor-pointer text-lg font-medium transition ${
+                      scrolled ? "text-gray-800" : "text-white"
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                );
+              })}
 
             </div>
 
 
-            {/* Mobile */}
+            {/* MOBILE MENU BUTTON */}
 
             <button
               className="lg:hidden"
@@ -119,77 +162,74 @@ function Navbar() {
               {menuOpen ? (
                 <X
                   className={
-                    scrolled
-                      ? "text-black"
-                      : "text-white"
+                    scrolled ? "text-black" : "text-white"
                   }
                 />
               ) : (
                 <Menu
                   className={
-                    scrolled
-                      ? "text-black"
-                      : "text-white"
+                    scrolled ? "text-black" : "text-white"
                   }
                 />
               )}
             </button>
 
           </div>
-
         </div>
       </motion.nav>
 
-      {/* Mobile Menu */}
+
+      {/* MOBILE MENU */}
 
       <AnimatePresence>
-
         {menuOpen && (
-
           <motion.div
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            transition={{ duration: .4 }}
+            transition={{ duration: 0.4 }}
             className="fixed top-0 right-0 w-80 h-screen bg-white z-50 shadow-2xl"
           >
 
             <div className="flex justify-end p-8">
-
-              <button
-                onClick={() => setMenuOpen(false)}
-              >
+              <button onClick={() => setMenuOpen(false)}>
                 <X size={30} />
               </button>
-
             </div>
 
             <div className="px-10 pt-6 flex flex-col gap-8">
 
-              {navItems.map((item) => (
+              {navItems.map((item) => {
 
-                <Link
-                  key={item}
-                  to={item.toLowerCase()}
-                  smooth={true}
-                  duration={700}
-                  offset={-80}
-                  onClick={() => setMenuOpen(false)}
-                  className="text-2xl font-semibold text-gray-700 cursor-pointer hover:text-green-700"
-                >
-                  {item}
-                </Link>
+                if (item.type === "page" || item.type === "home") {
+                  return (
+                    <RouterLink
+                      key={item.label}
+                      to={item.type === "home" ? "/" : item.target}
+                      onClick={() => setMenuOpen(false)}
+                      className="text-2xl font-semibold text-gray-700 hover:text-green-700"
+                    >
+                      {item.label}
+                    </RouterLink>
+                  );
+                }
 
-              ))}
+                return (
+                  <button
+                    key={item.label}
+                    onClick={() => handleScrollNavigation(item.target)}
+                    className="text-2xl font-semibold text-gray-700 text-left hover:text-green-700"
+                  >
+                    {item.label}
+                  </button>
+                );
+              })}
 
             </div>
 
           </motion.div>
-
         )}
-
       </AnimatePresence>
-
     </>
   );
 }

@@ -53,7 +53,7 @@ function Technology() {
               src={technologyImage}
               loading="lazy"
               decoding="async"
-              alt="Fibres from fallen leaves"
+              alt="Recovered fibres used to develop wood-free paper materials and packaging"
               className="w-full h-[280px] object-cover rounded-2xl shadow-lg"
             />
 
