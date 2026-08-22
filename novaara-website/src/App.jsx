@@ -1,3 +1,5 @@
+import { Helmet } from "react-helmet-async";
+
 import {
   BrowserRouter,
   Routes,
@@ -50,6 +52,42 @@ function ScrollHandler() {
 function Home() {
   return (
     <>
+      <Helmet>
+        <title>
+          Novaara Ecotechnologies | Paper Bags from Textile Waste
+        </title>
+
+        <meta
+          name="description"
+          content="Novaara Ecotechnologies develops tree-free paper and sustainable packaging from textile waste and fallen leaves."
+        />
+
+        <link
+          rel="canonical"
+          href="https://www.novaaraecotech.com/"
+        />
+
+        <meta
+          property="og:title"
+          content="Novaara Ecotechnologies | Sustainable Packaging from Waste"
+        />
+
+        <meta
+          property="og:description"
+          content="Tree-free paper and sustainable packaging engineered from textile waste and fallen leaves."
+        />
+
+        <meta
+          property="og:url"
+          content="https://www.novaaraecotech.com/"
+        />
+
+        <meta
+          property="og:type"
+          content="website"
+        />
+      </Helmet>
+
       <Navbar />
       <Hero />
       <About />
