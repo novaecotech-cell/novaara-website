@@ -64,7 +64,7 @@ function Home() {
 
         <link
           rel="canonical"
-          href="https://www.novaaraecotech.com/"
+          href="https://novaaraecotech.com/"
         />
 
         <meta
@@ -79,7 +79,7 @@ function Home() {
 
         <meta
           property="og:url"
-          content="https://www.novaaraecotech.com/"
+          content="https://novaaraecotech.com/"
         />
 
         <meta
